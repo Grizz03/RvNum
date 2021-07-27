@@ -6,6 +6,8 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.stephenw.rvnum.R
 import com.stephenw.rvnum.databinding.ActivityMainBinding
 
@@ -24,6 +26,11 @@ class MainActivity : AppCompatActivity()  {
         val view = binding.root
         setContentView(view)
 
+        // setting up grid and linear layout variables
+        val gridLayoutManager = GridLayoutManager(this, 3)
+        val linearLayoutManager = LinearLayoutManager(this)
+        binding.rvList.layoutManager = gridLayoutManager
+
         // initialize view model
         numViewModel = ViewModelProvider(this).get(NumViewModel::class.java)
 
@@ -36,6 +43,16 @@ class MainActivity : AppCompatActivity()  {
             binding.rvList.adapter = adapter
             binding.floatingBtn.setOnClickListener {
                 numViewModel.addNumToList()
+            }
+            // switch between layouts with switch
+            binding.apply {
+                binding.layoutSwitch.setOnClickListener {
+                    if (rvList.layoutManager == gridLayoutManager) {
+                        rvList.layoutManager = linearLayoutManager
+                    } else {
+                        rvList.layoutManager = gridLayoutManager
+                    }
+                }
             }
         }
     }
