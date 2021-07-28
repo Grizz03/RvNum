@@ -2,13 +2,9 @@ package com.stephenw.rvnum.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.stephenw.rvnum.R
 import com.stephenw.rvnum.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity()  {
@@ -29,7 +25,7 @@ class MainActivity : AppCompatActivity()  {
         // setting up grid and linear layout variables
         val gridLayoutManager = GridLayoutManager(this, 3)
         val linearLayoutManager = LinearLayoutManager(this)
-        binding.rvList.layoutManager = gridLayoutManager
+        binding.rvList.layoutManager = linearLayoutManager
 
         // initialize view model
         numViewModel = ViewModelProvider(this).get(NumViewModel::class.java)
