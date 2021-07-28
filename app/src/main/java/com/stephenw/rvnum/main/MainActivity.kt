@@ -1,13 +1,15 @@
 package com.stephenw.rvnum.main
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.children
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.stephenw.rvnum.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity()  {
+class MainActivity : AppCompatActivity() {
 
     // View Binding
     private var _binding: ActivityMainBinding? = null
@@ -31,7 +33,7 @@ class MainActivity : AppCompatActivity()  {
         numViewModel = ViewModelProvider(this).get(NumViewModel::class.java)
 
         // delivering data to observer
-        numViewModel.data.observe(this){ data ->
+        numViewModel.data.observe(this) { data ->
 
             // initializing adapter
             val adapter = NumAdapter(data)

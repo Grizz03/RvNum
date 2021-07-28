@@ -23,7 +23,7 @@ class NumAdapter(private var list: MutableList<Int>) :
                     setOnClickListener {
                         Toast.makeText(
                             it.context,
-                            num.toString(),
+                            text,
                             Toast.LENGTH_SHORT
                         ).show()
                         // TASK: 5
@@ -34,7 +34,7 @@ class NumAdapter(private var list: MutableList<Int>) :
         }
 
         private fun changeBackground() {
-            val numRange = 10..255
+            val numRange = 0..255
             val randomNum1: Int = numRange.random()
             val randomNum2: Int = numRange.random()
             val randomNum3: Int = numRange.random()
