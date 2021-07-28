@@ -16,11 +16,8 @@ class NumAdapter(private var list: MutableList<Int>) :
         fun bind(num: Int) {
             binding.apply {
                 listItemTv.apply {
-                    val numRange = 10..255
-                    val randomNum1: Int = numRange.random()
-                    val randomNum2: Int = numRange.random()
-                    val randomNum3: Int = numRange.random()
-                    setBackgroundColor(Color.rgb(randomNum1, randomNum2, randomNum3))
+                    // TASK: 5
+                    changeBackground()
                     text = num.toString()
                     // TASK: 3
                     setOnClickListener {
@@ -29,9 +26,19 @@ class NumAdapter(private var list: MutableList<Int>) :
                             num.toString(),
                             Toast.LENGTH_SHORT
                         ).show()
+                        // TASK: 5
+                        changeBackground()
                     }
                 }
             }
+        }
+
+        private fun changeBackground() {
+            val numRange = 10..255
+            val randomNum1: Int = numRange.random()
+            val randomNum2: Int = numRange.random()
+            val randomNum3: Int = numRange.random()
+            binding.listItemTv.setBackgroundColor(Color.rgb(randomNum1, randomNum2, randomNum3))
         }
     }
 
@@ -43,6 +50,7 @@ class NumAdapter(private var list: MutableList<Int>) :
         )
 
         return ViewHolder(binding)
+
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
