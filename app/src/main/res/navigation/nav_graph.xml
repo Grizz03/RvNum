@@ -7,7 +7,7 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.stephenw.rvnum.main.MainActivity"
+        android:name="com.stephenw.rvnum.main.ui.views.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
 </navigation>

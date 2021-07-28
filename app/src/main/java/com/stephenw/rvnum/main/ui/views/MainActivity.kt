@@ -1,13 +1,13 @@
-package com.stephenw.rvnum.main
+package com.stephenw.rvnum.main.ui.views
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.children
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.stephenw.rvnum.databinding.ActivityMainBinding
+import com.stephenw.rvnum.main.ui.adapters.NumAdapter
+import com.stephenw.rvnum.main.ui.model.NumViewModel
 
 class MainActivity : AppCompatActivity() {
 
