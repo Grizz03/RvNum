@@ -16,7 +16,7 @@ class NumAdapter(private var list: MutableList<Int>) :
         fun bind(num: Int) {
             binding.apply {
                 listItemTv.apply {
-                    val numRange = 10..250
+                    val numRange = 10..255
                     val randomNum1: Int = numRange.random()
                     val randomNum2: Int = numRange.random()
                     val randomNum3: Int = numRange.random()
